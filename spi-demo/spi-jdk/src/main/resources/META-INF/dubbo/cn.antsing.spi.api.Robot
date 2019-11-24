@@ -1,0 +1,1 @@
+bumblebee=cn.antsing.spi.Bumblebee

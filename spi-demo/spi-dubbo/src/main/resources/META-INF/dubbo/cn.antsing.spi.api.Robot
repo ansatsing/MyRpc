@@ -1,0 +1,1 @@
+optimusPrime=cn.antsing.spi.OptimusPrime
