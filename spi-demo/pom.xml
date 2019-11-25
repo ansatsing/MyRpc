@@ -28,6 +28,7 @@
         <module>spi-jdk</module>
         <module>spi-dubbo</module>
         <module>spi-client</module>
+        <module>spi-adaptive</module>
     </modules>
 
 

@@ -2,13 +2,16 @@ package cn.antsing.spi;
 
 import cn.antsing.spi.api.IDao;
 import cn.antsing.spi.api.IService;
+import com.alibaba.dubbo.common.URL;
 
 public class ServiceImpl implements IService {
     private IDao iDao;
     @Override
-    public void insertData(String data) {
+    public String insertData(String data,URL url) {
         System.out.println("doing data operate:"+data);
-        iDao.execute("insert into dd values(data)");
+        iDao.execute(data,url);
+        Class clazz = iDao.getClass();
+        return clazz.getSimpleName();
     }
 
     public void setIDao(IDao iDao) {

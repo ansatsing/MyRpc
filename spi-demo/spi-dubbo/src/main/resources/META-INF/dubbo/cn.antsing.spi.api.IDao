@@ -1,1 +1,3 @@
-iDao=cn.antsing.spi.DaoImpl
+daoImpl=cn.antsing.spi.DaoImpl
+#adaptiveIDao=cn.antsing.spi.AdaptiveIDao
+daoImpl1=cn.antsing.spi.DaoImpl1
