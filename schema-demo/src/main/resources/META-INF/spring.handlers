@@ -1,2 +1,4 @@
 http\://www.mycompany.com/schema/myns=\
   cn.antsing.demo.schema.MynsNamespaceHandler
+http\://www.foo.com/schema/component=\
+  cn.antsing.demo.schema.nesting.namespacehandler.ComponentNamespaceHandler

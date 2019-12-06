@@ -13,9 +13,9 @@ public class Main {
         for(String name : beanDefinitionNames){
             System.out.println(name);
         }
-        Class<?> jobDetailTemplate = applicationContext.getType("defaultDateFormat");
-        System.out.println(jobDetailTemplate.getName());
-        SimpleDateFormat defaultDateFormat = (SimpleDateFormat) applicationContext.getBean("defaultDateFormat");
-        System.out.println(defaultDateFormat.format(new Date()));
+//        Class<?> jobDetailTemplate = applicationContext.getType("defaultDateFormat");
+//        System.out.println(jobDetailTemplate.getName());
+//        SimpleDateFormat defaultDateFormat = (SimpleDateFormat) applicationContext.getBean("defaultDateFormat");
+//        System.out.println(defaultDateFormat.format(new Date()));
     }
 }

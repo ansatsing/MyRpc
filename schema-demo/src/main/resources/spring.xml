@@ -2,8 +2,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:myns="http://www.mycompany.com/schema/myns"
+       xmlns:foo="http://www.foo.com/schema/component"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.mycompany.com/schema/myns http://www.mycompany.com/schema/myns/myns.xsd">
+       http://www.mycompany.com/schema/myns http://www.mycompany.com/schema/myns/myns.xsd
+       http://www.foo.com/schema/component http://www.foo.com/schema/component/component.xsd
+        ">
     <!-- as a top-level bean -->
     <myns:dateformat id="defaultDateFormat" pattern="yyyy-MM-dd HH:mm" lenient="true"/>
 
@@ -13,4 +16,12 @@
             <myns:dateformat pattern="HH:mm MM-dd-yyyy"/>
         </property>
     </bean>
+
+    <foo:component id="bionic-family" name="Bionic-1">
+        <foo:component name="Mother-1">
+            <foo:component name="Karate-1"/>
+            <foo:component name="Sport-1"/>
+        </foo:component>
+        <foo:component name="Rock-1"/>
+    </foo:component>
 </beans>

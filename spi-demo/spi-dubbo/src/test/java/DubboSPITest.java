@@ -5,8 +5,10 @@ import com.alibaba.dubbo.common.extension.ExtensionLoader;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 import java.util.regex.Pattern;
 
 public class DubboSPITest {
@@ -85,4 +87,23 @@ public class DubboSPITest {
         Assert.assertTrue(!className.contains("$"));
     }
 
+
+    @Test
+    public void TestBigDecimal(){
+        Double d = 0.111d;
+        BigDecimal bigDecimal = BigDecimal.valueOf(d);
+        System.out.println(bigDecimal);//0.111
+        BigDecimal bigDecimal1 = new BigDecimal(d);//0.11100000000000000144328993201270350255072116851806640625
+        System.out.println(bigDecimal1);
+    }
+
+    @Test
+    public void TestMapTraverse(){
+        Map<String,Integer> map = new HashMap<>();
+        map.put("1",1);
+
+        Set<String> strings = map.keySet();
+        final Set<Map.Entry<String, Integer>> entries = map.entrySet();
+
+    }
 }

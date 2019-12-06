@@ -1,1 +1,3 @@
 http\://www.mycompany.com/schema/myns/myns.xsd=META-INF/myns.xsd
+http\://www.foo.com/schema/component/component.xsd=META-INF/component.xsd
+#http\://www.foo.com/schema/component/component.xsd=cn/antsing/demo/schema/nesting/component.xsd
