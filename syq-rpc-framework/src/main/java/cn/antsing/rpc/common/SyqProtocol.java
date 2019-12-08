@@ -53,4 +53,9 @@ public class SyqProtocol implements Serializable {
                 ", length=" + length +
                 '}';
     }
+
+    public static void main(String[] args) {
+        int a  = 9;
+        System.out.println(a& 0xFFFFFF);
+    }
 }

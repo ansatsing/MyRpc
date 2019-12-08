@@ -21,7 +21,7 @@ public class SyqDecoder extends LengthFieldBasedFrameDecoder {
 //    private final boolean failFast = true;
     private final static int HEADER_SIZE = 5;
     public SyqDecoder() {
-        super(  4*1024, 1, 4, 0, 0, true);
+        super(  1024*1024, 1, 4, 0, 0, true);
     }
 
     @Override

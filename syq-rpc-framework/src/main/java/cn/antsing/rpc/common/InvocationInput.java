@@ -1,6 +1,9 @@
 package cn.antsing.rpc.common;
 
-public class InvocationInput {
+import java.io.Serializable;
+
+public class InvocationInput implements Serializable {
+    private static final long serialVersionUID = 3754800760250737820L;
     private String interfac;
     private String methodName;
     private Object[] methodParameters;

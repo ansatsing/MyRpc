@@ -12,6 +12,7 @@
         <module>spi-demo</module>
         <module>schema-demo</module>
         <module>syq-rpc-framework</module>
+        <module>custom-protocol-demo</module>
     </modules>
 
     <dependencies>
@@ -20,11 +21,11 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
         </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>dubbo</artifactId>
-            <version>2.5.3</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba</groupId>-->
+            <!--<artifactId>dubbo</artifactId>-->
+            <!--<version>2.5.3</version>-->
+        <!--</dependency>-->
     </dependencies>
 
 </project>
