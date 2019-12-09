@@ -26,6 +26,7 @@ public class SyqDecoder extends LengthFieldBasedFrameDecoder {
 
     @Override
     protected Object decode(ChannelHandlerContext ctx, ByteBuf in) throws Exception {
+        logger.info("开始解码。。。");
         if( in == null){
             return null;
         }
@@ -41,6 +42,7 @@ public class SyqDecoder extends LengthFieldBasedFrameDecoder {
         byte[] data = new byte[len];
         in.readBytes(data);
         syqProtocol.setData(data);
+        logger.info("结束解码。。。");
         return syqProtocol;
     }
 }

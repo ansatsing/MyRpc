@@ -3,10 +3,7 @@ package cn.antsing.rpc.tcp.netty;
 import cn.antsing.rpc.tcp.TcpServer;
 import cn.antsing.rpc.tcp.netty.codec.SyqDecoder;
 import cn.antsing.rpc.tcp.netty.codec.SyqEncoder;
-import com.alibaba.dubbo.common.Constants;
-import com.alibaba.dubbo.remoting.transport.netty.NettyServer;
 import io.netty.bootstrap.ServerBootstrap;
-import io.netty.buffer.PooledByteBufAllocator;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
@@ -14,15 +11,13 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.util.concurrent.DefaultThreadFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.net.InetSocketAddress;
 
 public class NettyTcpServer implements TcpServer {
-    private static final Logger logger = LoggerFactory.getLogger(NettyServer.class);
+    private static final Logger logger = LoggerFactory.getLogger(NettyTcpServer.class);
 //
 //    private ServerBootstrap bootstrap;
 //
@@ -59,7 +54,7 @@ public class NettyTcpServer implements TcpServer {
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
-            ServerBootstrap sbs = new ServerBootstrap().group(bossGroup,workerGroup).channel(NioServerSocketChannel.class).localAddress(new InetSocketAddress(port))
+            ServerBootstrap sbs = new ServerBootstrap().group(bossGroup,workerGroup).channel(NioServerSocketChannel.class).localAddress(new InetSocketAddress(ip,port))
                     .childHandler(new ChannelInitializer<SocketChannel>() {
 
                         protected void initChannel(SocketChannel ch) throws Exception {

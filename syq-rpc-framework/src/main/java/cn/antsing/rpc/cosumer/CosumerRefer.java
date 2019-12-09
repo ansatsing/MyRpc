@@ -4,6 +4,8 @@ import cn.antsing.rpc.common.InvocationInput;
 import cn.antsing.rpc.common.SyqProtocol;
 import cn.antsing.rpc.schema.Consumer;
 import cn.antsing.rpc.util.SerializeUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;
@@ -11,6 +13,7 @@ import org.springframework.cglib.proxy.MethodProxy;
 import java.lang.reflect.Method;
 
 public class CosumerRefer {
+    private Logger logger = LoggerFactory.getLogger(CosumerRefer.class);
     private RpcRequest rpcRequest;
 
     public RpcRequest getRpcRequest() {
@@ -31,6 +34,8 @@ public class CosumerRefer {
                 input.setMethodName(method.getName());
                 input.setMethodParameters(objects);
                 SyqProtocol rqcResult = rpcRequest.request(input,consumer);
+
+                logger.info("获取到rpc请求结果:[{}]",rqcResult);
                 Object result = SerializeUtils.unserialize(rqcResult.getData());
                 return result;
             }

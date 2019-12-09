@@ -7,6 +7,5 @@
 
     <syq:consumer id="userService" interfac="cn.antsing.service.IUserService"
                   address="192.168.0.9:8089,192.168.0.9:8088"/>
-    <syq:producer id="userServiceProducer" interfac="cn.antsing.service.IUserService"/>
-
+    <syq:producer id="userServiceProducer" interfac="cn.antsing.service.IUserService" bind="192.168.0.9:8080"/>
 </beans>

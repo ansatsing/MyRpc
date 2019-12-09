@@ -8,21 +8,27 @@ public class MyProtocol implements Serializable {
     private byte type;
 
     //信息标志  0xAB 表示心跳包    0xBC 表示超时包  0xCD 业务信息包
-    private byte flag;
+    //private byte flag;
 
     //主题信息的长度
     private int length;
 
     //主题信息
-    private String body;
+    private byte[] body;
 
     public MyProtocol() {
 
     }
 
-    public MyProtocol(byte type, byte flag, int length, String body) {
+    public MyProtocol(byte type,  int length, byte[] body) {
         this.type = type;
-        this.flag = flag;
+       // this.flag = flag;
+        this.length = length;
+        this.body = body;
+    }
+    public MyProtocol(byte type, byte flag, int length, byte[] body) {
+        this.type = type;
+        // this.flag = flag;
         this.length = length;
         this.body = body;
     }
@@ -35,13 +41,13 @@ public class MyProtocol implements Serializable {
         this.type = type;
     }
 
-    public byte getFlag() {
-        return flag;
-    }
-
-    public void setFlag(byte flag) {
-        this.flag = flag;
-    }
+//    public byte getFlag() {
+//        return flag;
+//    }
+//
+//    public void setFlag(byte flag) {
+//        this.flag = flag;
+//    }
 
     public int getLength() {
         return length;
@@ -51,11 +57,20 @@ public class MyProtocol implements Serializable {
         this.length = length;
     }
 
-    public String getBody() {
+//    public String getBody() {
+//        return body;
+//    }
+//
+//    public void setBody(String body) {
+//        this.body = body;
+//    }
+
+
+    public byte[] getBody() {
         return body;
     }
 
-    public void setBody(String body) {
+    public void setBody(byte[] body) {
         this.body = body;
     }
 
@@ -63,7 +78,7 @@ public class MyProtocol implements Serializable {
     public String toString() {
         return "MyProtocol{" +
                 "type=" + type +
-                ", flag=" + flag +
+              //  ", flag=" + flag +
                 ", length=" + length +
                 ", body='" + body + '\'' +
                 '}';

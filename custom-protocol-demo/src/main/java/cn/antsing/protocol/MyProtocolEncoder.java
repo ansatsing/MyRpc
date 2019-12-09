@@ -12,11 +12,11 @@ public class MyProtocolEncoder  extends MessageToByteEncoder<MyProtocol> {
             throw new Exception("msg is null");
         }
 
-        String body = myProtocol.getBody();
-        byte[] bodyBytes = body.getBytes(Charset.forName("utf-8"));
+        //String body = myProtocol.getBody();
+        //byte[] bodyBytes = body.getBytes(Charset.forName("utf-8"));
         byteBuf.writeByte(myProtocol.getType());
-        byteBuf.writeByte(myProtocol.getFlag());
-        byteBuf.writeInt(bodyBytes.length);
-        byteBuf.writeBytes(bodyBytes);
+      //  byteBuf.writeByte(myProtocol.getFlag());
+        byteBuf.writeInt(myProtocol.getBody().length);
+        byteBuf.writeBytes(myProtocol.getBody());
     }
 }

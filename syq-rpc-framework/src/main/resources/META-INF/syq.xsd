@@ -12,6 +12,7 @@
             <!--<xsd:attribute name="ref" type="xsd:string" use="required"/>-->
             <xsd:attribute name="interfac" use="required" type="xsd:string"/>
             <xsd:attribute name="id" type="xsd:ID"/>
+            <xsd:attribute name="bind" use="required" type="xsd:string"/>
         </xsd:complexType>
     </xsd:element>
 

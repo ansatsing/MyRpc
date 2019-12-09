@@ -9,5 +9,5 @@ import java.util.List;
  * 存放响应结果
  */
 public final class ResultContainer {
-    public static final  List<SyqProtocol> result = new LinkedList<SyqProtocol>();
+    public static volatile  List<SyqProtocol> result = new LinkedList<SyqProtocol>();
 }

@@ -14,7 +14,7 @@ import java.net.InetSocketAddress;
 public class Server {
     private static final int MAX_FRAME_LENGTH = 1024 * 1024;
     private static final int LENGTH_FIELD_LENGTH = 4;
-    private static final int LENGTH_FIELD_OFFSET = 2;
+    private static final int LENGTH_FIELD_OFFSET = 1;
     private static final int LENGTH_ADJUSTMENT = 0;
     private static final int INITIAL_BYTES_TO_STRIP = 0;
 
@@ -55,7 +55,7 @@ public class Server {
         if (args.length > 0) {
             port = Integer.parseInt(args[0]);
         } else {
-            port = 8080;
+            port = 8081;
         }
         new Server(port).start();
     }

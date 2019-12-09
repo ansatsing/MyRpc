@@ -4,7 +4,7 @@ import cn.antsing.rpc.common.InvocationInput;
 import cn.antsing.rpc.schema.Consumer;
 
 public interface TcpClient {
-    void connect(Consumer consumer);
+    //void connect(Consumer consumer);
 
-    void sendRequest(InvocationInput invocationInput);
+    void sendRequest(InvocationInput invocationInput, Consumer consumer);
 }

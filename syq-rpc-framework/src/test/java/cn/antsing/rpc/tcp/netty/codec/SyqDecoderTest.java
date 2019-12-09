@@ -10,15 +10,15 @@ import io.netty.handler.codec.string.StringDecoder;
 import io.netty.util.concurrent.EventExecutorGroup;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
+//import org.mockito.Mock;
+//import org.mockito.runners.MockitoJUnitRunner;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 
-@RunWith(MockitoJUnitRunner.class)
+//@RunWith(MockitoJUnitRunner.class)
 public class SyqDecoderTest {
-    @Mock
+   // @Mock
     ChannelHandlerContext context;
 
     @Test

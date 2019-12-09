@@ -4,7 +4,7 @@ import cn.antsing.rpc.tcp.TcpServer;
 import cn.antsing.rpc.tcp.netty.NettyTcpServer;
 import org.junit.Test;
 
-public class TestServerAndClient {
+public class TestServer {
     @Test
     public void startServer(){
         TcpServer tcpServer = new NettyTcpServer();

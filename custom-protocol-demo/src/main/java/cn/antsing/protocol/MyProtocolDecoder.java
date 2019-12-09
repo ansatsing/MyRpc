@@ -45,7 +45,7 @@ public class MyProtocolDecoder extends LengthFieldBasedFrameDecoder {
         //注意在读的过程中，readIndex的指针也在移动
         type = in.readByte();
 
-        flag = in.readByte();
+       // flag = in.readByte();
 
         length = in.readInt();
 
@@ -55,9 +55,9 @@ public class MyProtocolDecoder extends LengthFieldBasedFrameDecoder {
         ByteBuf buf = in.readBytes(length);
         byte[] req = new byte[buf.readableBytes()];
         buf.readBytes(req);
-        body = new String(req, "UTF-8");
+        //body = new String(req, "UTF-8");
 
-        MyProtocol protocol = new MyProtocol(type,flag,length,body);
+        MyProtocol protocol = new MyProtocol(type,length,req);
         return protocol;
     }
 
